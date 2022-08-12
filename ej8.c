@@ -60,7 +60,7 @@ void ordenar_vector(int numeros[MAX_NUMEROS], int* tope){
 
 }
 
-int main(int argc, char* argv[]){
+int main(){
 
     FILE* f_numeros = fopen("numeros.txt", "r");
     if(f_numeros == NULL){
@@ -95,3 +95,5 @@ int main(int argc, char* argv[]){
 
     return 0;
 }
+
+//TERMINADO

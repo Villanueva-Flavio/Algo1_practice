@@ -48,7 +48,7 @@ void conseguir_indices_m1(FILE* leer_archivo, int indices, int *tope_indices){
 *
 * Process that get the index of all the balloons to fill and it saves into an array
 */
-void conseguir_indices_m2(FILE *leer_archivo, int indices[MAX_INDICES], int *tope_indices){
+void conseguir_indices(FILE *leer_archivo, int indices[MAX_INDICES], int *tope_indices){
     char buffer[MAX_BUFFER], *ptr;
     int i = 0, presion[MAX_INDICES];
     while(!feof(leer_archivo)){
@@ -62,12 +62,7 @@ void conseguir_indices_m2(FILE *leer_archivo, int indices[MAX_INDICES], int *top
     }
 }
 
-/*
-* Procedimiento que escribe un archivo bajo el metodo 2
-*
-* Process that write a file under the method 2
-*/
-void guardar_indices_m2(FILE *leer_archivo, FILE *escribir_archivo, int indices[MAX_INDICES], int tope){
+void guardar_indices(FILE *leer_archivo, FILE *escribir_archivo, int indices[MAX_INDICES], int tope){
     int i, presion;
     char buffer_in[MAX_BUFFER], *ptr, buffer_out[MAX_BUFFER];
     for(i = 0; i < tope; i++){
@@ -82,28 +77,18 @@ void guardar_indices_m2(FILE *leer_archivo, FILE *escribir_archivo, int indices[
     }
 }
 
-// Method 1: fscanf
-// Method 2: fgets
-// IN -> presiones.csv 
-// OUT -> globos_a_inflar.csv
 
-int main(int argc, char *argv[]){
+int main(){
     FILE *leer_archivo = fopen("./archivos/presiones.csv", "r");
     FILE *escribir_archivo = fopen("./archivos/globos_a_inflar.csv", "w");
     int indices[MAX_INDICES], tope_indices;
     if(leer_archivo!=NULL){
-        if(argc > 1){
-            conseguir_indices_m2(leer_archivo, indices, &tope_indices);
-            if(strcmp(argv[1], METODO_UNO) == 0){   
-                //guardar_indices_m1(leer_archivo, escribir_archivo, indices, tope_indices);
-            } else if (strcmp(argv[1], METODO_DOS) == 0){
-                guardar_indices_m2(leer_archivo, escribir_archivo, indices, tope_indices);
-            }
-        } else {
-            printf("Elegir un argumento: %s o %s\n", METODO_UNO, METODO_DOS);
-        }
-        fclose(leer_archivo);
+        conseguir_indices(leer_archivo, indices, &tope_indices)
+        guardar_indices(leer_archivo, escribir_archivo, indices, tope_indices);
     }
+    fclose(leer_archivo);
     fclose(escribir_archivo);
     return 0;
 }
+
+//TERMINADO

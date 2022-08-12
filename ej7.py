@@ -57,4 +57,7 @@ def main():
             file.write(str(jugadores[victorias.index(max(victorias))]))
     except FileNotFoundError:
         print("El archivo partidos.csv no existe o es ilegible")
+        
 main()
+
+"""TERMINADO"""

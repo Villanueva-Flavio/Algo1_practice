@@ -88,3 +88,5 @@ def main():
 		print("El archivo piruetas.csv no se puede abrir o es ilegible")
 
 main()
+
+"""TERMINADO"""

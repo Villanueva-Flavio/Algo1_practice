@@ -74,3 +74,5 @@ def main():
 		print("IO Error, el archivo: 'apunte.csv' no existe o no es legible")
         
 main()
+
+"""TERMINADO"""

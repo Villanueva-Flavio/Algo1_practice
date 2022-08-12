@@ -49,3 +49,5 @@ int main(){
     FILE *leer_archivo ("archivos/huesitos.csv", "r");
     return 0;
 }
+
+//SIN TERMINAR

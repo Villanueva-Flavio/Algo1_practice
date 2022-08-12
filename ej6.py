@@ -61,3 +61,5 @@ def main():
 		file.write("Más alejados: (" + mas_distantes[0] + ";" + mas_distantes[1] + ") - (" + mas_distantes[2] + ";" + mas_distantes[3] + ")")
 
 main()
+
+"""TERMINADO"""
