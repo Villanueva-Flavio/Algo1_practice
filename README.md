@@ -9,3 +9,6 @@ Themes:
 - Sorting
 - Files
 - Main argv/argc
+
+To do:
+    - Add the last 3 questions of 17-18-19.py
