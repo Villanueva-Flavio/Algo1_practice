@@ -11,7 +11,7 @@ def main():
     horas, minutos, minutos_descansados = 0, 0, 0
     arranca = False
     try:
-        with open("sueños.csv", "r", encoding="utf8") as file:
+        with open("archivos/De_Entrada/sueños.csv", "r", encoding="utf8") as file:
             for line in file:
                 datos = line.rstrip().split(";")
                 if datos[0] == inicio:
@@ -22,7 +22,7 @@ def main():
                     arranca = False
             horas = minutos_descansados//60
             minutos = minutos_descansados%60
-        with open("salida.txt", "w", encoding="utf8") as file:
+        with open("archivos/De_Salida/salida.txt", "w", encoding="utf8") as file:
             file.write(str(horas) + "h" + str(minutos) + "m")
     except FileNotFoundError:
         print("El archivo sueños.csv no existe")

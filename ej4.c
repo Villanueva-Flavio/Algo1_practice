@@ -79,8 +79,8 @@ void guardar_indices(FILE *leer_archivo, FILE *escribir_archivo, int indices[MAX
 
 
 int main(){
-    FILE *leer_archivo = fopen("./archivos/presiones.csv", "r");
-    FILE *escribir_archivo = fopen("./archivos/globos_a_inflar.csv", "w");
+    FILE *leer_archivo = fopen("./archivos/De_Entrada/presiones.csv", "r");
+    FILE *escribir_archivo = fopen("./archivos/De_Salida/globos_a_inflar.csv", "w");
     int indices[MAX_INDICES], tope_indices;
     if(leer_archivo!=NULL){
         conseguir_indices(leer_archivo, indices, &tope_indices)

@@ -42,7 +42,7 @@
 def main():
     jugadores, victorias = ["MKY", "PLT", "DNL", "MNY"], [0, 0, 0, 0]
     try:
-        with open("archivos/partidos.csv", "r", encoding="utf8") as file:
+        with open("archivos/De_Entrada/partidos.csv", "r", encoding="utf8") as file:
             for line in file:
                 partido = line.rstrip().split(" - ")
                 score1 = partido[0].split(" ")[1]
@@ -53,7 +53,7 @@ def main():
                     victorias[jugadores.index(personaje1)] += 1
                 elif score2 > score1 :
                     victorias[jugadores.index(personaje2)] += 1
-        with open("archivos/ganador.txt", "w", encoding="utf8") as file:
+        with open("archivos/De_Salida/ganador.txt", "w", encoding="utf8") as file:
             file.write(str(jugadores[victorias.index(max(victorias))]))
     except FileNotFoundError:
         print("El archivo partidos.csv no existe o es ilegible")

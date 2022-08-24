@@ -77,9 +77,9 @@ def obtener_datos(file, line_a, line_h, line_id):
 def main():
 	linea_saltos_h, linea_saltos_a, linea_id = [], [], []
 	try:
-		with open ('archivos/piruetas.csv', 'r', encoding='utf8') as file:
+		with open ('archivos/De_Entrada/piruetas.csv', 'r', encoding='utf8') as file:
 			obtener_datos(file, linea_saltos_a, linea_saltos_h, linea_id)
-		with open ('archivos/candidatos.csv', 'w', encoding='utf8') as file:
+		with open ('archivos/De_Salida/candidatos.csv', 'w', encoding='utf8') as file:
 			for i in range (len(linea_id)):
 				file.write(str(linea_id[i]) + ';' + str(linea_saltos_h[i]) + ';' + str(linea_saltos_a[i]))
 				if i != len(linea_id) -1:

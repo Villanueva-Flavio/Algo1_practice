@@ -50,13 +50,13 @@ def obtener_coordenadas(x, y, distantes):
 
 def main():
 	x, y = [], []
-	with open("archivos/coordenadas.csv", "r", encoding="utf8") as file:
+	with open("archivos/De_Entrada/coordenadas.csv", "r", encoding="utf8") as file:
 		for line in file:
 			x.append(line.rstrip().split(";")[0])
 			y.append(line.rstrip().split(";")[1])		
 		mas_distantes = obtener_coordenadas(x, y, True)
 		mas_cercanos = obtener_coordenadas(x, y, False)
-	with open("archivos/distancias.txt", "w", encoding="utf8") as file:
+	with open("archivos/De_Salida/distancias.txt", "w", encoding="utf8") as file:
 		file.write("Más cerca: (" + mas_cercanos[0] + ";" + mas_cercanos[1] + ") - (" + mas_cercanos[2] + ";" + mas_cercanos[3] + ")\n")
 		file.write("Más alejados: (" + mas_distantes[0] + ";" + mas_distantes[1] + ") - (" + mas_distantes[2] + ";" + mas_distantes[3] + ")")
 

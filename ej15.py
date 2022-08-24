@@ -54,14 +54,12 @@ def calcular_rutas(file):
 
 def main():
 	try:
-		with open("archivos/viajes.txt", "r", encoding="utf8") as file:
+		with open("archivos/De_Entrada/viajes.txt", "r", encoding="utf8") as file:
 			rutas = calcular_rutas(file)
 			print(str(rutas))
-		with open("archivos/salida.txt", "w", encoding="utf8") as file:
+		with open("archivos/De_Salida/salida.txt", "w", encoding="utf8") as file:
 			file.write(str(rutas))
 	except FileNotFoundError:
 		print("El archivo viajes.txt no existe o no es legible")
   
 main()
-
-"""TERMINADO"""

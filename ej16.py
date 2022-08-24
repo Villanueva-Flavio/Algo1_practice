@@ -63,12 +63,12 @@ def guardar_datos(file, insumos, cantidad):
 
 def main():
 	try:
-		with open ('archivos/apunte.csv', 'r', encoding='utf8') as file:
+		with open ('archivos/De_Entrada/apunte.csv', 'r', encoding='utf8') as file:
 			bot, insumos = get_Bot(file), get_Insumos(file)
 			cantidad = [0 for elemento in insumos]
 			for line in file:
 				obtener_datos(line, bot, insumos, cantidad)
-		with open ('archivos/salida.txt', 'w', encoding='utf8') as file:
+		with open ('archivos/De_Salida/salida.txt', 'w', encoding='utf8') as file:
 				guardar_datos(file, insumos, cantidad)
 	except FileNotFoundError():
 		print("IO Error, el archivo: 'apunte.csv' no existe o no es legible")

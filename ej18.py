@@ -2,7 +2,7 @@ def main():
     vuelta, recorrido = 360, 0
     mano, contramano = "M", "C"
     try:
-        with open("tramos.csv", "r", encoding="utf8") as file:
+        with open("archivos/De_Entrada/tramos.csv", "r", encoding="utf8") as file:
             for line in file:
                 sentido = line.rstrip().split(";")[0]
                 grados = int(line.rstrip().split(";")[1])
@@ -14,7 +14,7 @@ def main():
             if recorrido % vuelta != 0 and recorrido < 0:
                 vueltas_hechas += 1
             print (vueltas_hechas)
-        with open("salida.txt", "w", encoding="utf8") as file:
+        with open("archivos/De_Salida/salida.txt", "w", encoding="utf8") as file:
             file.write(str(vueltas_hechas) + " vuelta")
             if vueltas_hechas != 1 and vueltas_hechas != -1:
                 file.write("s")

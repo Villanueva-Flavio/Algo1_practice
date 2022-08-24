@@ -46,7 +46,7 @@ Adrogue
 
 
 int main(){
-    FILE *leer_archivo ("archivos/huesitos.csv", "r");
+    FILE *leer_archivo ("archivos/De_Entrada/huesitos.csv", "r");
     return 0;
 }
 

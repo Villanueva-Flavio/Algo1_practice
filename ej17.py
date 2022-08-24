@@ -12,10 +12,10 @@ def desencriptando(line):
 def main():
     contrasenia = []
     try:
-        with open("palabras.csv", "r", encoding="utf8") as file:
+        with open("archivos/De_Entrada/palabras.csv", "r", encoding="utf8") as file:
             for line in file:
                 contrasenia.append(desencriptando(line))
-        with open("contraseña.txt", "w", encoding="utf8") as file:
+        with open("archivos/De_Salida/contraseña.txt", "w", encoding="utf8") as file:
             for i in range(len(contrasenia)):
                 file.write(contrasenia[i])
     except FileNotFoundError:

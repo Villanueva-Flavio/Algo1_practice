@@ -62,13 +62,13 @@ void ordenar_vector(int numeros[MAX_NUMEROS], int* tope){
 
 int main(){
 
-    FILE* f_numeros = fopen("numeros.txt", "r");
+    FILE* f_numeros = fopen("archivos/De_Entrada/numeros.txt", "r");
     if(f_numeros == NULL){
         perror("No se pudo abrir el archivo\n");
         return ERROR;
     }
 
-    FILE* f_numeros_repetidos = fopen("numeros_repetidos.txt", "w");
+    FILE* f_numeros_repetidos = fopen("archivos/De_Salida/numeros_repetidos.txt", "w");
     if(f_numeros_repetidos == NULL){
         perror("No se pudo abrir el archivo\n");
         fclose(f_numeros);

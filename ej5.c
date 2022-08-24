@@ -75,12 +75,12 @@ void enviar_contrasenia(FILE* escribir_archvo, int contrasenia[MAX_SIZE], int to
 }
 
 int main(){
-	FILE *leer_archivo = fopen("archivos/pista.csv", "r");
-	FILE *escribir_archivo = fopen("archivos/contrasenia.txt", "w");
+	FILE *leer_archivo = fopen("archivos/De_Entrada/pista.csv", "r");
+	FILE *escribir_archivo = fopen("archivos/De_Salida/contrasenia.txt", "w");
 	int matriz[MAX_SIZE][MAX_SIZE], contrasenia[MAX_SIZE], tope;
 	if(isReadable(leer_archivo)){
 		fclose(leer_archivo);
-		leer_archivo = fopen("archivos/pista.csv", "r");
+		leer_archivo = fopen("archivos/De_Entrada/pista.csv", "r");
 		cargar_datos(leer_archivo, matriz, &tope);
 		desencriptar(matriz, contrasenia, tope);
 		enviar_contrasenia(escribir_archivo, contrasenia, tope);
